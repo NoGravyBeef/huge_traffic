@@ -21,4 +21,3 @@ springdoc:
     default-model-expand-depth: 10
   cache:
     disabled: true
-
