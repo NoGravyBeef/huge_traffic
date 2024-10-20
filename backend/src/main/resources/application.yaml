@@ -1,23 +1,36 @@
 spring:
   application:
     name: backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/youp-db
+    username: root
+    password: green502
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     open-in-view: true
     hibernate:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
   servlet:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
 
-springdoc:
-  api-docs:
-    version: openapi_3_1
-  swagger-ui:
-    path: /swagger
-    operations-sorter: method
-    default-model-expand-depth: 10
-  cache:
-    disabled: true
+#springdoc:
+#  api-docs:
+#    version: openapi_3_1
+#  swagger-ui:
+#    path: /swagger
+#    operations-sorter: method
+#    default-model-expand-depth: 10
+#  cache:
+#    disabled: true
